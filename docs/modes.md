@@ -1,1 +1,2 @@
-nbghjnhbghnm
+# Modes
+vue3-easy-data-table has two modes: client-side mode and [server-side mode](/features/server-side-paginate-and-sort). Client-side mode is for the case that all data has already been loaded, In other words, your initial call is asking for all the pages from a server. [Server-side mode](/features/server-side-paginate-and-sort) means that you need to request limited data from a server everytime you navigate to a new page. Client-side mode is the default mode, you have to pass `server-options` and `server-items-length` props to switch to the [server-side mode](/features/server-side-paginate-and-sort).

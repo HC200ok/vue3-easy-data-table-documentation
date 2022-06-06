@@ -5,8 +5,7 @@ npm install vue3-easy-data-table
 // or
 yarn add vue3-easy-data-table
 ```
-
-## Usage
+## Regist globally
 ```js
 import Vue3EasyDataTable from 'vue3-easy-data-table';
 import 'vue3-easy-data-table/dist/style.css';
@@ -14,6 +13,8 @@ import 'vue3-easy-data-table/dist/style.css';
 const app = createApp(App);
 app.component('EasyDataTable', Vue3EasyDataTable);
 ```
+
+## Basic Example
 
 ```js
 <template>
@@ -27,16 +28,26 @@ app.component('EasyDataTable', Vue3EasyDataTable);
 import type { Header, Item } from "vue3-easy-data-table";
 
 const headers: Header[] = [
-  { text: "Name", value: "name" },
-  { text: "Height (cm)", value: "height", sortable: true },
-  { text: "Weight (kg)", value: "weight", sortable: true },
-  { text: "Age", value: "age", sortable: true }
+  { text: "PLAYER", value: "player" },
+  { text: "TEAM", value: "team"},
+  { text: "NUMBER", value: "number"},
+  { text: "POSITION", value: "position"},
+  { text: "HEIGHT", value: "height"},
+  { text: "WEIGHT (lbs)", value: "weight", sortable: true},
+  { text: "LAST ATTENDED", value: "lastAttended"},
+  { text: "COUNTRY", value: "country"},
 ];
 
+
+
 const items: Item[] = [
-  { "name": "Curry", "height": 178, "weight": 77, "age": 20 },
-  { "name": "James", "height": 180, "weight": 75, "age": 21 },
-  { "name": "Jordan", "height": 181, "weight": 73, "age": 22 }
+  { "player": "Stephen Curry", "avator": "https://cdn.nba.com/headshots/nba/latest/260x190/201939.png", "team": "GSW", "number": 30, "position": 'G', "height": '6-2', "weight": 185, "lastAttended": "Davidson", "country": "USA"},
+  { "player": "Lebron James", "avator": "https://cdn.nba.com/headshots/nba/latest/260x190/2544.png", "team": "LAL", "number": 6, "position": 'F', "height": '6-9', "weight": 250, "lastAttended": "St. Vincent-St. Mary HS (OH)", "country": "USA"},
+  { "player": "Kevin Durant", "avator": "https://cdn.nba.com/headshots/nba/latest/260x190/201142.png", "team": "BKN", "number": 7, "position": 'F', "height": '6-10', "weight": 240, "lastAttended": "Texas-Austin", "country": "USA"},
+  { "player": "Giannis Antetokounmpo", "avator": "https://cdn.nba.com/headshots/nba/latest/260x190/203507.png", "team": "MIL", "number": 34, "position": 'F', "height": '6-11', "weight": 242, "lastAttended": "Filathlitikos", "country": "Greece"},
 ];
 </script>
 ```
+
+<Basic/>
+

@@ -1,7 +1,7 @@
-import { Item } from "vue3-easy-data-table";
+import { Item, ServerOptions } from "vue3-easy-data-table";
 
 export const mockClientItems = (itemsNumber = 100): Item[] => {
-  const mockItems: Items[] = [];
+  const mockItems: Item[] = [];
   const sports = ["basketball", "football", "running", "swimming"];
   const fruits = ["banana", "apple", "orange", "peach"];
 
@@ -17,6 +17,32 @@ export const mockClientItems = (itemsNumber = 100): Item[] => {
     });
   }
   return mockItems;
+};
+
+export const mockServerItems = async (
+  serverOptions: ServerOptions
+): Promise<{
+  serverCurrentPageItems: Item[];
+  serverTotalItemsLength: number;
+}> => {
+  const { page, rowsPerPage, sortBy, sortType } = serverOptions;
+  const serverItemsLength = 500;
+  const serverTotalItems = mockClientItems(serverItemsLength);
+  if (sortBy && sortType) {
+    serverTotalItems.sort((a, b) => {
+      if (a[sortBy] < b[sortBy]) return sortType === "desc" ? 1 : -1;
+      if (a[sortBy] > b[sortBy]) return sortType === "desc" ? -1 : 1;
+      return 0;
+    });
+  }
+  await new Promise((s) => setTimeout(s, 2000));
+  return {
+    serverCurrentPageItems: serverTotalItems.slice(
+      (page - 1) * rowsPerPage,
+      page * rowsPerPage
+    ),
+    serverTotalItemsLength: serverItemsLength
+  };
 };
 
 export const mockItems = [
