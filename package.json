@@ -20,11 +20,12 @@
   "homepage": "https://github.com/HC200ok/vue3-easy-data-table-documentation#readme",
   "devDependencies": {
     "@vuepress/plugin-register-components": "^2.0.0-beta.46",
+    "@vuepress/plugin-search": "^2.0.0-beta.46",
     "vuepress": "^2.0.0-beta.46"
   },
   "dependencies": {
     "vue-nav-tabs": "^0.5.7",
-    "vue3-easy-data-table": "^1.0.24",
+    "vue3-easy-data-table": "^1.1.11",
     "vuepress-plugin-vue-example": "^1.1.6"
   }
 }

@@ -35,7 +35,7 @@ export const mockServerItems = async (
       return 0;
     });
   }
-  await new Promise((s) => setTimeout(s, 2000));
+  await new Promise((s) => setTimeout(s, 3000));
   return {
     serverCurrentPageItems: serverTotalItems.slice(
       (page - 1) * rowsPerPage,

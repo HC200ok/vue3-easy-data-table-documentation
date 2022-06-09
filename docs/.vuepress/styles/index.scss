@@ -8,5 +8,9 @@
 }
 
 .theme-default-content tr:nth-child(2n) {
-  background-color: #fff;
+  background-color: inherit;
+}
+
+.hero {
+  display: none;
 }

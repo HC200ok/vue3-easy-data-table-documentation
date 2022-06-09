@@ -2,6 +2,7 @@
 home: true
 title: Home
 search: true
+heroText: ""
 actions:
   - text: Get Started
     link: /getting-started.html
@@ -12,4 +13,7 @@ actions:
 footer: MIT Licensed | Copyright © 2022-present HC200ok
 ---
 
+<MixBlend/>
+
 <ItemSlot/>
+

@@ -1,6 +1,6 @@
 # Features
 
-1. [Item slot](#item-slot)
+1. [Item slot](/docs/features/item-slot.mditem-slot)
 2. [Buttons pagination](#buttons-pagination)
 3. [Dense](#dense)
 4. [Multiple selecting](#multiple-selecting)

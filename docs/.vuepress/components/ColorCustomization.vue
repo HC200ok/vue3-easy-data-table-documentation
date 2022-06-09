@@ -1,12 +1,31 @@
 <template>
   <div>
     <EasyDataTable
+      v-model:items-selected="itemsSelected"
       :headers="headers"
       :items="items"
-      :theme-color="themeColor"
-      v-model:itemsSelected="itemsSelected"
       buttons-pagination
-      loading
+      alternating
+      border-color="#445269"
+
+      header-background-color="#2d3a4f"
+      header-font-color="#c1cad4"
+
+      even-row-background-color="#4c5d7a"
+      even-row-font-color="#fff"
+
+      footer-background-color="#2d3a4f"
+      footer-font-color="#c0c7d2"
+
+      row-background-color="#2d3a4f"
+      row-font-color="#c0c7d2"
+
+      row-hover-background-color="#eee"
+      row-hover-font-color="#2d3a4f"
+
+      theme-color="#1d90ff"
+
+      :hover-to-change-color="false"
     >
     </EasyDataTable>
   </div>
@@ -17,6 +36,8 @@ import 'vue3-easy-data-table/dist/style.css';
 import EasyDataTable from 'vue3-easy-data-table';
 import { Header, Item } from "vue3-easy-data-table";
 import { ref } from "vue";
+
+const itemsSelected: Item[] = ref([]);
 
 const headers: Header[] = [
   { text: "PLAYER", value: "player" },
@@ -35,8 +56,5 @@ const items: Item[] = [
   { "player": "Kevin Durant", "team": "BKN", "number": 7, "position": 'F', "height": '6-10', "weight": 240, "lastAttended": "Texas-Austin", "country": "USA"},
   { "player": "Giannis Antetokounmpo", "team": "MIL", "number": 34, "position": 'F', "height": '6-11', "weight": 242, "lastAttended": "Filathlitikos", "country": "Greece"},
 ];
-
-const themeColor = "#f48225";
-const itemsSelected = ref([items[0]]);
 </script>
 

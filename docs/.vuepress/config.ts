@@ -2,12 +2,15 @@ const { defaultTheme } = require('@vuepress/theme-default')
 const VueExamplePlugin = require('vuepress-plugin-vue-example');
 const { registerComponentsPlugin } = require('@vuepress/plugin-register-components')
 const { path } = require('@vuepress/utils')
+const { searchPlugin } = require('@vuepress/plugin-search')
 
 module.exports = {
+  base: '/vue3-easy-data-table-doc/',
   lang: 'en-US',
-  title: 'vue3-easy-datat-table',
-  description: 'A simple and easy-to-use data table component made with Vue.js 3.x.',
+  title: 'vue3-easy-data-table',
+  description: 'A customizable and easy-to-use data table component made with Vue.js 3.x.',
   plugins: [
+    searchPlugin(),
     VueExamplePlugin({
       componentsPath: '/components/'
     }),
@@ -25,10 +28,17 @@ module.exports = {
         PaginationSlot: path.resolve(__dirname, './components/PaginationSlot.vue'),
         ShowIndex: path.resolve(__dirname, './components/ShowIndex.vue'),
         Alternating: path.resolve(__dirname, './components/Alternating.vue'),
+        ColorCustomization: path.resolve(__dirname, './components/ColorCustomization.vue'),
+        LoadingSlot: path.resolve(__dirname, './components/LoadingSlot.vue'),
+        FooterCustomization: path.resolve(__dirname, './components/FooterCustomization.vue'),
+        MixBlend: path.resolve(__dirname, './components/MixBlend.vue'),
       }
     })
   ],
   theme: defaultTheme({
+    darkMode: false,
+    logo: 'https://github.com/HC200ok/vue3-easy-data-table/blob/main/images/logo.png?raw=true',
+    repo: 'https://github.com/HC200ok/vue3-easy-data-table/',
     sidebar: [
       {
         text: 'Introduction',
@@ -70,7 +80,6 @@ module.exports = {
             text: 'Pagination slot',
             link: '/features/pagination-slot',
           },
-
           {
             text: 'Searching',
             link: '/features/searching',
@@ -91,6 +100,18 @@ module.exports = {
             text: 'Theme color',
             link: '/features/theme-color',
           },
+          {
+            text: 'Color customization',
+            link: '/features/color-customization',
+          },
+          {
+            text: 'Loading slot',
+            link: '/features/loading-slot',
+          },
+          {
+            text: 'Footer customization',
+            link: '/features/footer-customization',
+          },
         ],
       },
       {
@@ -109,6 +130,10 @@ module.exports = {
             text: 'Server side mode props',
             link: '/props/server-side-mode-only-props',
           },
+          {
+            text: 'Color props',
+            link: '/props/color-props',
+          }
         ]
       },
       {
