@@ -10,10 +10,12 @@
     sort-type="desc"
     :loading="loading"
   >
+        <!-- src="https://thumbs.gfycat.com/AngelicYellowIberianmole.webp" -->
+
     <template #loading>
       <img
-        src="https://thumbs.gfycat.com/AngelicYellowIberianmole.webp"
-        style="width: 60px;height: 100px;"
+        src="./Basketball.gif"
+        style="width: 50px;height: 50px;"
       >
     </template>
     <template #player="{ player, avator, page }">

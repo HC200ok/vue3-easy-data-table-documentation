@@ -32,6 +32,7 @@ module.exports = {
         LoadingSlot: path.resolve(__dirname, './components/LoadingSlot.vue'),
         FooterCustomization: path.resolve(__dirname, './components/FooterCustomization.vue'),
         MixBlend: path.resolve(__dirname, './components/MixBlend.vue'),
+        FooterCustomizationServer: path.resolve(__dirname, './components/FooterCustomizationServer.vue'),
       }
     })
   ],

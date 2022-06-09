@@ -30,7 +30,7 @@ const items: Item[] = ref([
 ...
 </script>
 ```
-:warning: Attention: the `<name>` of `#<name>` should be a value of header item:
+> :warning: **Attention**: the `<name>` of `#<name>` should be a value of header item:
 
 <img src="../.vuepress/images/item-slot-use-value.png"/>
 

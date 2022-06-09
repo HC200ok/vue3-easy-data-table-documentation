@@ -1,7 +1,8 @@
 # Searching
 Use `search-field` and `search-value` props to search for information in a specific field. If you don't pass the `search-field` prop, the component will search in all fields.
 
-Notice: Searching feature is only available in client-side mode.
+> :warning: **Attention**: Searching feature is only available in client-side mode. In server-side mode you need to request searched data from server everytime you navigate to a new page.
+> Click [here](https://hc200ok.github.io/vue3-easy-data-table-doc/features/server-side-paginate-and-sort.html) to check how to learn about server-side mode
 
 ## Example
 

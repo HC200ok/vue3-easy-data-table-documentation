@@ -4,10 +4,10 @@ vue3-easy-data-table exposes some footer related variables and footer related fu
 
 | Name | Type |  Description |
 | -------- | ----------- | ---- |
+| clientItemsLength | variable | Total amount of items in `client-side` mode. <br>Attention: In server-side mode, please use `serverItemsLength` prop instead!|
 | currentPageFirstIndex | variable | First index in current page |
 | currentPageLastIndex | variable | Last index in current page |
-| totalItemsLength | variable | Total amount of items |
-| currentPaginationNumber | variable | Current pagination number |
+| currentPa ginationNumber | variable | Current pagination number |
 | maxPaginationNumber | variable |Max pagination number |
 | isLastPage | variable | Is the last page |
 | isFirstPage | variable | Is the first page |
@@ -18,8 +18,10 @@ vue3-easy-data-table exposes some footer related variables and footer related fu
 You can access to these variables and functions by using [template refs](https://vuejs.org/guide/essentials/template-refs.html).
 Then you can customize your own footer outside of vue3-easy-data-table as below:
 
-Attention: don't forget to set `show-footer` to `false` to hide the native footer of vue3-easy-data-table
+> :warning: **Attention**: don't forget to set `show-footer` to `false` to hide the native footer of vue3-easy-data-table
 ## Example 
+
+### In client-side mode
 
 ```vue
 <template>
@@ -33,7 +35,7 @@ Attention: don't forget to set `show-footer` to `false` to hide the native foote
   
   <div class="customize-footer">
     <div class="customize-index">
-      Now displaying: {{currentPageFirstIndex}} ~ {{currentPageLastIndex}} of {{totalItemsLength}}
+      Now displaying: {{currentPageFirstIndex}} ~ {{currentPageLastIndex}} of {{clientItemsLength}}
     </div>
   
     <div class="customize-buttons">
@@ -65,7 +67,7 @@ const dataTable = ref();
 // index related
 const currentPageFirstIndex = computed(() => dataTable.value?.currentPageFirstIndex);
 const currentPageLastIndex = computed(() => dataTable.value?.currentPageLastIndex);
-const totalItemsLength = computed(() => dataTable.value?.totalItemsLength);
+const clientItemsLength = computed(() => dataTable.value?.clientItemsLength);
 
 // pagination related
 const maxPaginationNumber = computed(() => dataTable.value?.maxPaginationNumber);
@@ -104,3 +106,33 @@ const items: Item[] = mockClientItems(200);
 ```
 
 <FooterCustomization/>
+
+
+### In server-side mode
+
+Click [here](https://hc200ok.github.io/vue3-easy-data-table-doc/features/server-side-paginate-and-sort.html) to check how to use server-side mode
+
+```vue
+<template>
+  <EasyDataTable
+    ref="dataTable"
+    v-model:server-options="serverOptions"
+    :headers="headers"
+    :items="items"
+    :server-items-length="serverItemsLength"
+    :show-footer="false"
+    :loading="loading"
+  />
+
+  <div class="customize-footer">
+    <div class="customize-index">
+      <!-- In server-side mode, please use serverItemsLength prop not clientItemsLength variable !!! -->
+      Now displaying: {{currentPageFirstIndex}} ~ {{currentPageLastIndex}} of {{serverItemsLength}}
+    </div>
+    <!-- omit -->
+    <!-- ... -->
+  </div>
+</template>
+```
+
+<FooterCustomizationServer/>

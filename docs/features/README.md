@@ -1,5 +1,6 @@
 # Features
 
+1. [Alternating](/docs/features/item-slot.mditem-slot)
 1. [Item slot](/docs/features/item-slot.mditem-slot)
 2. [Buttons pagination](#buttons-pagination)
 3. [Dense](#dense)
