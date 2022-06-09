@@ -1,5 +1,5 @@
 # Server side paginate and sort
-Also called server-side mode, In this mode, you’re loading data already paginated and sorted from a server. You should watch the `serverOptions` to know when to request for new page. Don't forget to use the `loading` prop to display a loading bar while fetching data.
+Also called server-side mode, In this mode, you’re loading data already paginated and sorted from a server. You should watch the `serverOptions` to know when to request for new page. Don't forget to use the `loading` prop to display a loading animation while fetching data.
 
 > :warning: **Attention**:
 > 1. `server-items-length` and `v-model:server-options` props are required.

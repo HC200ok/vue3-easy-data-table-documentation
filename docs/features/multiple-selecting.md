@@ -1,5 +1,5 @@
 # Multiple selecting
-Using the `v-model:items-selected` will enable you to gather data of specific items by toggling checkbox.
+Using the `v-model:items-selected` will enable you to gather data of specific items by toggling checkbox on.
 
 ## Example
 

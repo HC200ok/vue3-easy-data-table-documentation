@@ -1,10 +1,10 @@
 # Single field sorting
-Use `sort-by` and `sort-type` to determine the initial sorting field and sorting type ('asc' or 'desc').
+Use `sort-by` and `sort-type` props to determine the initial sorting field and sorting type ('asc' or 'desc').
 
-Set `sortable` property to true in a header items to make the corresponding columns sortable.
+Set `sortable` property to `true` in a header item to make the corresponding columns sortable.
 
-> :warning: **Attention**: Single field sorting is only available in client-side mode. In server-side mode you need to request sorted data from server everytime you navigate to a new page.
-> Click [here](https://hc200ok.github.io/vue3-easy-data-table-doc/features/server-side-paginate-and-sort.html) to check how to learn about server-side mode.
+> :warning: **Attention**: Single field sorting is only available in client-side mode. In server-side mode, you need to request sorted data from server when you navigate to a new page.
+> Click [here](https://hc200ok.github.io/vue3-easy-data-table-doc/features/server-side-paginate-and-sort.html) to check more information about server-side mode.
 
 ## Example
 

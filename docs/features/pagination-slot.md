@@ -1,5 +1,5 @@
 # Pagination slot
-vue3-easy-data-table is providing a pagination slot exposing four pagination related varaibles: `isFirstPage`, `isLastPage`, `currentPaginationNumber`, `maxPaginationNumber`,and two two pagination related functions:
+vue3-easy-data-table is providing a pagination slot exposing four pagination related varaibles: `isFirstPage`, `isLastPage`, `currentPaginationNumber`, `maxPaginationNumber`,and two pagination related functions:
 `nextPage`, `prevPage`.
 
 ## Example

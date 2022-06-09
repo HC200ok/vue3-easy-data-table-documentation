@@ -16,9 +16,9 @@ vue3-easy-data-table exposes some footer related variables and footer related fu
 | updatePage | function | Navigate to the specified page |
 
 You can access to these variables and functions by using [template refs](https://vuejs.org/guide/essentials/template-refs.html).
-Then you can customize your own footer outside of vue3-easy-data-table as below:
+Then you can customize your own footer outside of vue3-easy-data-table as the example provided:
 
-> :warning: **Attention**: don't forget to set `show-footer` to `false` to hide the native footer of vue3-easy-data-table
+**Attention**: don't forget to set `show-footer` to `false` to hide the native footer of vue3-easy-data-table
 ## Example 
 
 ### In client-side mode

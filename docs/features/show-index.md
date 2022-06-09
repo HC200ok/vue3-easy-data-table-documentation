@@ -1,6 +1,6 @@
 # Show index
 
-Add `show-index` prop to show index of item.
+Use `show-index` prop to show index of item.
 
 ## Example
 ```vue

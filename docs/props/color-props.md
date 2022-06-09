@@ -12,8 +12,7 @@
 | row-border-color | false | string | '#e0e0e0' | Border color of row items |
 | row-font-color | false | string | '#212121' | When `alternating` prop is `true`, It means font color of each row;<br/> When `alternating` prop is `false`, It means font color of each odd row|
 | hover-to-change-color | false | boolean | true | Set to `true`, background and font color of row will change when mouse hover  |
-| row-hover-background-color | false | string | '#eee' | 
-Background color of table footer when mouse hover, only available when `hover-to-change-color` prop is `true`|
+| row-hover-background-color | false | string | '#eee' | Background color of table footer when mouse hover, only available when `hover-to-change-color` prop is `true`|
 | row-hover-font-color | false | string | '#212121' | Font color of table footer when mouse hover, only available when `hover-to-change-color` prop is `true`|
 | table-border-color | false | string | '#e0e0e0' | Border color of table |
 | theme-color | false | string | '#42b883' | Fill color of checkbox, background color of active option of rows selector, color of loading bar and  background color of active button of buttons pagination |

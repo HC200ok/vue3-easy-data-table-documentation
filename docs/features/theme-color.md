@@ -1,5 +1,5 @@
 # Theme color
-Use `theme-color` prop to customize color of checkbox, active option of rows selector, loading bar and  active button of buttons pagination.
+Use `theme-color` prop to customize color of active checkbox, active option of rows selector, loading animation and active pagination button.
 
 ## Example
 ```vue

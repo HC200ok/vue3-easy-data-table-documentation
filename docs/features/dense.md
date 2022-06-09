@@ -1,5 +1,5 @@
 # Dense
-Pass `dense` prop to provide an alternate dense style.
+Use `dense` prop to provide an alternate dense style.
 
 ## Example
 

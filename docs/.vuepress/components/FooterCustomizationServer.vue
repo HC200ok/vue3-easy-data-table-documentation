@@ -1,6 +1,6 @@
 <template>
   <div>
-    Rest api: {{ restApiUrl }}
+    Rest api example: {{ restApiUrl }}
     <br /><br />
     <EasyDataTable
       ref="dataTable"
