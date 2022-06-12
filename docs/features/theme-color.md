@@ -13,7 +13,7 @@ Use `theme-color` prop to customize color of active checkbox, active option of r
 />
 
 <script lang="ts" setup>
-import { Header, Item } from "vue3-easy-data-table";
+import type { Header, Item } from "vue3-easy-data-table";
 import { ref } from "vue";
 
 const headers: Header[] = [

@@ -2,7 +2,7 @@
 You can customize loading effect like this:
 
 ```vue
-<DataTable
+<EasyDataTable
   :headers="headers"
   :items="items"
 >
@@ -12,7 +12,7 @@ You can customize loading effect like this:
       style="width: 100px; height: 80px;"
     />
   </template>
-</DataTable>
+</EasyDataTable>
 ```
 
 Attention: this is a new feature since version `1.1.4` 

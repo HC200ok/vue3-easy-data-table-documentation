@@ -6,7 +6,7 @@ vue3-easy-data-table is providing a pagination slot exposing four pagination rel
 So, you can customize pagination like this:
 
 ```vue
-<DataTable
+<EasyDataTable
   :headers="headers"
   :items="mockItems"
 >
@@ -18,7 +18,7 @@ So, you can customize pagination like this:
       next page
     </button>
   </template>
-</DataTable>
+</EasyDataTable>
 ```
 [![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/pagination-slot-75n6iv?file=/src/App.vue)
 

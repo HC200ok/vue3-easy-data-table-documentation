@@ -138,6 +138,10 @@ module.exports = {
         ]
       },
       {
+        text: 'Roadmap',
+        link: '/roadmap/',
+      },
+      {
         text: 'Contribute',
         link: '/contribute/',
       }

@@ -31,7 +31,7 @@ By default, vue3-easy-data-table doesn't provide a search input, but you can pro
 
 <script lang="ts" setup>
 import { ref } from "vue";
-import { Header, Item } from "vue3-easy-data-table";
+import type { Header, Item } from "vue3-easy-data-table";
 
 const searchField = ref("player");
 const searchValue = ref("Stephen Curry");

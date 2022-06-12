@@ -6,7 +6,9 @@
       :items="items"
       buttons-pagination
       alternating
-      border-color="#445269"
+
+      table-border-color="#445269"
+      row-border-color="#445269"
 
       header-background-color="#2d3a4f"
       header-font-color="#c1cad4"

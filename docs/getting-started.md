@@ -16,7 +16,7 @@ app.component('EasyDataTable', Vue3EasyDataTable);
 
 ## Basic Example
 
-```js
+```vue
 <template>
   <EasyDataTable
     :headers="headers"
@@ -37,8 +37,6 @@ const headers: Header[] = [
   { text: "LAST ATTENDED", value: "lastAttended"},
   { text: "COUNTRY", value: "country"},
 ];
-
-
 
 const items: Item[] = [
   { "player": "Stephen Curry", "avator": "https://cdn.nba.com/headshots/nba/latest/260x190/201939.png", "team": "GSW", "number": 30, "position": 'G', "height": '6-2', "weight": 185, "lastAttended": "Davidson", "country": "USA"},

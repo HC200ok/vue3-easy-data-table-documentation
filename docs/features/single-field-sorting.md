@@ -13,14 +13,16 @@ Set `sortable` property to `true` in a header item to make the corresponding col
   <EasyDataTable
     :headers="headers"
     :items="items"
-    :sort-by="weight"
-    :sort-type="desc"
+    :sort-by="sortBy"
+    :sort-type="sortType"
   />
 </template>
 
 <script lang="ts" setup>
+import type { Header, Item, SortType } from "vue3-easy-data-table";
+
 const sortBy = "weight";
-const sortType = "desc";
+const sortType: SortType = "desc";
 
 const headers: Header[] = [
   { text: "WEIGHT (lbs)", value: "weight", sortable: true},

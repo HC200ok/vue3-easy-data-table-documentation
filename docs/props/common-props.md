@@ -13,7 +13,7 @@ common props can be used both in client-side mode and server-side mode.
 | headers | true | Header[]<br>(Header: {<br> &nbsp;&nbsp;&nbsp;&nbsp;text: string,<br>  &nbsp;&nbsp;&nbsp;&nbsp;value: string,<br>  &nbsp;&nbsp;&nbsp;&nbsp;sortable?: boolean,})<br>  | [] | Table header items |
 | items | true | Item[] <br>(Item:  Record<string, any>) | [] | Table body items |
 | loading | false | boolean | false | If true and no items are provided, then a loading animation and will be shown |
-| max-height | false | number \| null | null | Max height of table (table header and table body, without footer) |
+| table-height | false | number \| null | null | Height of table (table header and table body, without footer) |
 | rows-items | false | number[] | [25, 50, 100] | A number array of rows-per-page, working as the options of `rows per page` selector |
 | rows-per-page | false | number | 25 | Rows of items to display in per page |
 | show-index | false | boolean | false | Set `true` to show index of item.|

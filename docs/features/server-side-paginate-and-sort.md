@@ -19,7 +19,7 @@ Also called server-side mode, In this mode, you’re loading data already pagina
 </template>
 
 <script lang="ts" setup>
-import { Header, Item, ServerOptions } from "vue3-easy-data-table";
+import type { Header, Item, ServerOptions } from "vue3-easy-data-table";
 import { mockServerItems } from "../mock";
 import { ref, computed, watch } from "vue";
 
