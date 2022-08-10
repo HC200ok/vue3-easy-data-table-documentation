@@ -66,6 +66,26 @@ watch(serverOptions, (value) => { loadFromServer(); }, { deep: true });
 
 <ServerSidePaginateAndSort/>
 
+## Must sort
+
+If you dont want no-sorting state, you can use `must-sort` prop, then the sorting field will only switch between ascending and descending.
+
+```vue
+<template>
+  <EasyDataTable
+    v-model:server-options="serverOptions"
+    :server-items-length="serverItemsLength"
+    :loading="loading"
+    :headers="headers"
+    :items="items"
+    must-sort
+  />
+</template>
+// omit
+...
+```
+<ServerMustSort/>
+
 
 
 

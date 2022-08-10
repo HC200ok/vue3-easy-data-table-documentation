@@ -23,3 +23,5 @@ So, you can customize pagination like this:
 [![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/pagination-slot-75n6iv?file=/src/App.vue)
 
 <PaginationSlot/>
+
+> :warning: `pagination slot` feature is based on the [`slots`](https://vuejs.org/guide/components/slots.html) feature of vue.js. So before using the `pagination slot` feature in vue3-easy-data-table, Please make sure you have known how to use the [`slots`](https://vuejs.org/guide/components/slots.html) feature of vue.js. 

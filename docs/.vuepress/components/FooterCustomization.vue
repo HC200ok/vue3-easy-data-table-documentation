@@ -5,7 +5,7 @@
       :headers="headers"
       :items="items"
       :rows-per-page="10"
-      :show-footer="false"
+      hide-footer
     >
     </EasyDataTable>
 
@@ -37,6 +37,8 @@ import { computed, onMounted, ref, watch } from 'vue';
 import 'vue3-easy-data-table/dist/style.css';
 import EasyDataTable from 'vue3-easy-data-table';
 import { mockClientItems, mockServerItems } from "../mock";
+import { usePagination } from "use-vue3-easy-data-table";
+import type { UsePaginationReturn } from "use-vue3-easy-data-table";
 
 const items = ref<Item[]>(mockClientItems(200));
 const headers: Header[] = [
@@ -52,27 +54,19 @@ const headers: Header[] = [
 // $ref dataTable
 const dataTable = ref();
 
-// index related
-const currentPageFirstIndex = computed(() => dataTable.value?.currentPageFirstIndex);
-const currentPageLastIndex = computed(() => dataTable.value?.currentPageLastIndex);
-const clientItemsLength = computed(() => dataTable.value?.clientItemsLength);
+const {
+  currentPageFirstIndex,
+  currentPageLastIndex,
+  clientItemsLength,
+  maxPaginationNumber,
+  currentPaginationNumber,
+  isFirstPage,
+  isLastPage,
+  nextPage,
+  prevPage,
+  updatePage,
+}: UsePaginationReturn = usePagination(dataTable);
 
-// paginations related
-const maxPaginationNumber = computed(() => dataTable.value?.maxPaginationNumber);
-const currentPaginationNumber = computed(() => dataTable.value?.currentPaginationNumber);
-
-const isFirstPage = computed(() => dataTable.value?.isFirstPage);
-const isLastPage = computed(() => dataTable.value?.isLastPage);
-
-const nextPage = () => {
-  dataTable.value.nextPage();
-};
-const prevPage = () => {
-  dataTable.value.prevPage();
-};
-const updatePage = (paginationNumber: number) => {
-  dataTable.value.updatePage(paginationNumber);
-};
 </script>
 
 <style scoped>

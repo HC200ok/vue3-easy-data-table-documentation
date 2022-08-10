@@ -1,45 +1,23 @@
 <template>
-  <div>
-    <EasyDataTable
-      v-model:items-selected="itemsSelected"
-      :headers="headers"
-      :items="items"
-      buttons-pagination
-      alternating
-
-      table-border-color="#445269"
-      row-border-color="#445269"
-
-      header-background-color="#2d3a4f"
-      header-font-color="#c1cad4"
-
-      even-row-background-color="#4c5d7a"
-      even-row-font-color="#fff"
-
-      footer-background-color="#2d3a4f"
-      footer-font-color="#c0c7d2"
-
-      row-background-color="#2d3a4f"
-      row-font-color="#c0c7d2"
-
-      row-hover-background-color="#eee"
-      row-hover-font-color="#2d3a4f"
-
-      theme-color="#1d90ff"
-
-      :hover-to-change-color="false"
-    >
-    </EasyDataTable>
-  </div>
+  <EasyDataTable
+    v-model:items-selected="itemsSelected"
+    show-index
+    :headers="headers"
+    :items="items"
+    @click-row="showItem"
+  />
+  <br />
+  row clicked:<br />
+  <div id="row-clicked"></div>
 </template>
 
 <script lang="ts" setup>
 import 'vue3-easy-data-table/dist/style.css';
 import EasyDataTable from 'vue3-easy-data-table';
-import { Header, Item } from "vue3-easy-data-table";
+import type { Header, Item, ClickRowArgument} from "vue3-easy-data-table";
 import { ref } from "vue";
 
-const itemsSelected: Item[] = ref([]);
+const itemsSelected = ref<Item[]>([]);
 
 const headers: Header[] = [
   { text: "PLAYER", value: "player" },
@@ -58,5 +36,9 @@ const items: Item[] = [
   { "player": "Kevin Durant", "team": "BKN", "number": 7, "position": 'F', "height": '6-10', "weight": 240, "lastAttended": "Texas-Austin", "country": "USA"},
   { "player": "Giannis Antetokounmpo", "team": "MIL", "number": 34, "position": 'F', "height": '6-11', "weight": 242, "lastAttended": "Filathlitikos", "country": "Greece"},
 ];
+
+const showItem = (item: ClickRowArgument) => {
+  document.getElementById('row-clicked').innerHTML = JSON.stringify(item);
+};
 </script>
 

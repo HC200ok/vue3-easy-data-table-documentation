@@ -1,13 +1,14 @@
 # Footer customization
 
-vue3-easy-data-table exposes some footer related variables and footer related functions:
+## Method 1: Exposed variables and functions
+`vue3-easy-data-table` exposes some footer related variables and functions:
 
 | Name | Type |  Description |
 | -------- | ----------- | ---- |
 | clientItemsLength | variable | Total amount of items in `client-side` mode. <br>Attention: In server-side mode, please use `serverItemsLength` prop instead!|
 | currentPageFirstIndex | variable | First index in current page |
 | currentPageLastIndex | variable | Last index in current page |
-| currentPa ginationNumber | variable | Current pagination number |
+| currentPaginationNumber | variable | Current pagination number |
 | maxPaginationNumber | variable |Max pagination number |
 | isLastPage | variable | Is the last page |
 | isFirstPage | variable | Is the first page |
@@ -15,13 +16,12 @@ vue3-easy-data-table exposes some footer related variables and footer related fu
 | prevPage | function | Navigate to the previous page |
 | updatePage | function | Navigate to the specified page |
 
-You can access to these variables and functions by using [template refs](https://vuejs.org/guide/essentials/template-refs.html).
-Then you can customize your own footer outside of vue3-easy-data-table as the example provided:
+You can access to these variables and functions through [template refs](https://vuejs.org/guide/essentials/template-refs.html).
+Then you can customize your own footer outside of the `vue3-easy-data-table` as the examples provided:
 
-**Attention**: don't forget to set `show-footer` to `false` to hide the native footer of vue3-easy-data-table
-## Example 
+### Examples
 
-### In client-side mode
+#### In client mode
 
 ```vue
 <template>
@@ -107,8 +107,9 @@ const items: Item[] = mockClientItems(200);
 
 <FooterCustomization/>
 
+**Attention**: don't forget to set `show-footer` to `false` to to hide the native footer of `vue3-easy-data-table`
 
-### In server-side mode
+#### In server-side mode
 
 Click [here](https://hc200ok.github.io/vue3-easy-data-table-doc/features/server-side-paginate-and-sort.html) to check how to use server-side mode
 
@@ -120,7 +121,7 @@ Click [here](https://hc200ok.github.io/vue3-easy-data-table-doc/features/server-
     :headers="headers"
     :items="items"
     :server-items-length="serverItemsLength"
-    :show-footer="false"
+    hide-footer
     :loading="loading"
   />
 
@@ -136,3 +137,107 @@ Click [here](https://hc200ok.github.io/vue3-easy-data-table-doc/features/server-
 ```
 
 <FooterCustomizationServer/>
+
+**Attention**: In server-side mode, please use `serverItemsLength` prop instead of `clientItemsLength`.
+
+
+## Method 2: Composable function
+
+You can alos use `usePagination` function in [`use-vue3-easy-data-table`](https://github.com/HC200ok/use-vue3-easy-data-table) to achieve the customization more easily.
+
+### Install
+```
+npm install use-vue3-easy-data-table
+```
+
+### Usage
+```vue
+<template>
+  <EasyDataTable
+    ref="dataTable"
+    :headers="headers"
+    :items="items"
+    :rows-per-page="10"
+    hide-footer
+  />
+  
+  <div class="customize-footer">
+    <div class="customize-index">
+      Now displaying: {{currentPageFirstIndex}} ~ {{currentPageLastIndex}} of {{clientItemsLength}}
+    </div>
+  
+    <div class="customize-buttons">
+      <span
+        v-for="paginationNumber in maxPaginationNumber"
+        class="customize-button"
+        :class="{'active': paginationNumber === currentPaginationNumber}"
+        @click="updatePage(paginationNumber)"
+      >
+        {{paginationNumber}}
+      </span>
+    </div>
+  
+    <div class="customize-pagination">
+      <button class="prev-page" @click="prevPage" :disabled="isFirstPage">prev page</button>
+      <button class="next-page" @click="nextPage" :disabled="isLastPage">next page</button>
+    </div>
+  </div>
+</template>
+
+<script lang="ts" setup>
+import type { Header, Item } from "vue3-easy-data-table";
+import { computed, ref } from "vue";
+import { mockClientItems } from "../mock";
+import { usePagination } from "use-vue3-easy-data-table";
+import type { UsePaginationReturn } from "use-vue3-easy-data-table";
+
+const dataTable = ref();
+
+const {
+  currentPageFirstIndex,
+  currentPageLastIndex,
+  clientItemsLength,
+  maxPaginationNumber,
+  currentPaginationNumber,
+  isFirstPage,
+  isLastPage,
+  nextPage,
+  prevPage,
+  updatePage,
+}: UsePaginationReturn = usePagination(dataTable);
+
+const headers: Header[] = [
+  { text: "Name", value: "name" },
+  { text: "Address", value: "address" },
+  { text: "Height", value: "height", sortable: true },
+  { text: "Weight", value: "weight", sortable: true },
+  { text: "Age", value: "age", sortable: true },
+  { text: "Favourite sport", value: "favouriteSport" },
+  { text: "Favourite fruits", value: "favouriteFruits" },
+];
+
+const items: Item[] = mockClientItems(200);
+</script>
+
+<style>
+/* omit */
+...
+</style>
+```
+
+<FooterCustomization/>
+
+### Type declaration
+
+| Name | Type |  Description |
+| -------- | ----------- | ---- |
+| clientItemsLength | ComputedRef<number \| undefined> | Total amount of items in `client-side` mode. <br>Attention: In server-side mode, please use `serverItemsLength` prop instead!|
+| currentPageFirstIndex | ComputedRef<number \| undefined> | First index in current page |
+| currentPageLastIndex | ComputedRef<number \| undefined> | Last index in current page |
+| currentPaginationNumber | ComputedRef<number \| undefined> | Current pagination number |
+| maxPaginationNumber | ComputedRef<number \| undefined> |Max pagination number |
+| isLastPage | ComputedRef<boolean \| undefined> | Is the last page |
+| isFirstPage |  ComputedRef<boolean \| undefined> | Is the first page |
+| nextPage | () => void | Navigate to the next pag |
+| prevPage | () => void | Navigate to the previous page |
+| updatePage | (paginationNumber: number) => void | Navigate to the specified page |

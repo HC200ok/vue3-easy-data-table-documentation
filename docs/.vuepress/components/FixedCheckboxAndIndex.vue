@@ -1,9 +1,13 @@
 <template>
   <EasyDataTable
+    v-model:items-selected="itemsSelected"
+    fixed-checkbox
+    :checkbox-column-width="40"
+    show-index
+    fixed-index
+    :index-column-width="40"
     :headers="headers"
     :items="items"
-    :sort-by="sortBy"
-    :sort-type="sortType"
   >
   </EasyDataTable>
 </template>
@@ -12,19 +16,19 @@
 import 'vue3-easy-data-table/dist/style.css';
 import EasyDataTable from 'vue3-easy-data-table';
 import { Header, Item } from "vue3-easy-data-table";
+import { ref } from "vue";
 
-const sortBy = "weight";
-const sortType = "desc";
+const itemsSelected: Item[] = ref([]);
 
 const headers: Header[] = [
-  { text: "PLAYER", value: "player" },
+  { text: "PLAYER", value: "player"},
   { text: "TEAM", value: "team"},
-  { text: "NUMBER", value: "number", sortable: true},
-  { text: "POSITION", value: "position"},
-  { text: "HEIGHT", value: "height"},
-  { text: "WEIGHT (lbs)", value: "weight", sortable: true},
-  { text: "LAST ATTENDED", value: "lastAttended"},
-  { text: "COUNTRY", value: "country"},
+  { text: "NUMBER", value: "number"},
+  { text: "POSITION", value: "position", width: 200},
+  { text: "HEIGHT", value: "height", width: 200},
+  { text: "WEIGHT (lbs)", value: "weight", sortable: true, width: 200},
+  { text: "LAST ATTENDED", value: "lastAttended", width: 200},
+  { text: "COUNTRY", value: "country", width: 200},
 ];
 
 const items: Item[] = [

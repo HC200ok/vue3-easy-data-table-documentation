@@ -2,29 +2,28 @@
   <EasyDataTable
     :headers="headers"
     :items="items"
-    :sort-by="sortBy"
-    :sort-type="sortType"
-  >
-  </EasyDataTable>
+    @update-sort="updateSort"
+  />
+  <br />
+  New sort options:<br />
+  <div id="new-sort"></div>
 </template>
 
 <script lang="ts" setup>
 import 'vue3-easy-data-table/dist/style.css';
 import EasyDataTable from 'vue3-easy-data-table';
-import { Header, Item } from "vue3-easy-data-table";
-
-const sortBy = "weight";
-const sortType = "desc";
+import type { Header, Item, UpdateSortArgument} from "vue3-easy-data-table";
+import { ref } from "vue";
 
 const headers: Header[] = [
   { text: "PLAYER", value: "player" },
   { text: "TEAM", value: "team"},
-  { text: "NUMBER", value: "number", sortable: true},
+  { text: "NUMBER", value: "number"},
   { text: "POSITION", value: "position"},
   { text: "HEIGHT", value: "height"},
   { text: "WEIGHT (lbs)", value: "weight", sortable: true},
   { text: "LAST ATTENDED", value: "lastAttended"},
-  { text: "COUNTRY", value: "country"},
+  { text: "COUNTRY", value: "country", sortable: true},
 ];
 
 const items: Item[] = [
@@ -33,5 +32,9 @@ const items: Item[] = [
   { "player": "Kevin Durant", "team": "BKN", "number": 7, "position": 'F', "height": '6-10', "weight": 240, "lastAttended": "Texas-Austin", "country": "USA"},
   { "player": "Giannis Antetokounmpo", "team": "MIL", "number": 34, "position": 'F', "height": '6-11', "weight": 242, "lastAttended": "Filathlitikos", "country": "Greece"},
 ];
+
+const updateSort = (sortOptions: UpdateSortArgument) => {
+  document.getElementById('new-sort').innerHTML = JSON.stringify(sortOptions);
+};
 </script>
 

@@ -12,7 +12,7 @@ Using the `v-model:items-selected` will enable you to gather data of specific it
 
 <script lang="ts" setup>
 import { ref } from "vue";
-const itemsSelected: Item[] = ref([]);
+const itemsSelected = ref<Item[]>([]);
 ...
 </script>
 ```

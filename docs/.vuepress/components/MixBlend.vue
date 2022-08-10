@@ -1,7 +1,7 @@
 <template>
   <div class="mix-blend-container">
     <img
-      src="https://thumbs.gfycat.com/AgonizingDecisiveBullmastiff-size_restricted.gif"
+      src="https://acegif.com/wp-content/gifs/fire-17.gif"
       alt=""
     />
     <div class="text">
@@ -28,8 +28,6 @@
     </p>
   </header>
 </template>
-
-<script></script>
 
 <style scoped>
 .hero.show {

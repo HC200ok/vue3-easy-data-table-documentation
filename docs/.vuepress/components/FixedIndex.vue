@@ -1,9 +1,10 @@
 <template>
   <EasyDataTable
+    show-index
+    fixed-index
+    :index-column-width="30"
     :headers="headers"
     :items="items"
-    :sort-by="sortBy"
-    :sort-type="sortType"
   >
   </EasyDataTable>
 </template>
@@ -12,18 +13,18 @@
 import 'vue3-easy-data-table/dist/style.css';
 import EasyDataTable from 'vue3-easy-data-table';
 import { Header, Item } from "vue3-easy-data-table";
+import { ref } from "vue";
 
-const sortBy = "weight";
-const sortType = "desc";
+const itemsSelected: Item[] = ref([]);
 
 const headers: Header[] = [
-  { text: "PLAYER", value: "player" },
+  { text: "PLAYER", value: "player", width: 200 },
   { text: "TEAM", value: "team"},
-  { text: "NUMBER", value: "number", sortable: true},
+  { text: "NUMBER", value: "number"},
   { text: "POSITION", value: "position"},
   { text: "HEIGHT", value: "height"},
-  { text: "WEIGHT (lbs)", value: "weight", sortable: true},
-  { text: "LAST ATTENDED", value: "lastAttended"},
+  { text: "WEIGHT (lbs)", value: "weight", sortable: true, width: 200},
+  { text: "LAST ATTENDED", value: "lastAttended", width: 200},
   { text: "COUNTRY", value: "country"},
 ];
 
