@@ -40,7 +40,7 @@ const items = ref<Item[]>([]);
 const serverItemsLength = ref(0);
 const serverOptions = ref<ServerOptions>({
   page: 1,
-  rowsPerPage: 5,
+  rowsPerPage: 25,
   sortBy: 'age',
   sortType: 'desc',
 });
@@ -111,6 +111,9 @@ watch(
   --easy-table-footer-font-size: 14px;
   --easy-table-footer-padding: 0px 10px;
   --easy-table-footer-height: 50px;
+
+  --easy-table-rows-per-page-selector-width: 70px;
+  --easy-table-rows-per-page-selector-option-padding: 10px;
 
   --easy-table-scrollbar-track-color: #2d3a4f;
   --easy-table-scrollbar-color: #2d3a4f;

@@ -45,6 +45,9 @@ Custom table style by using [css variables](https://hc200ok.github.io/vue3-easy-
   --easy-table-footer-padding: 0px 10px;
   --easy-table-footer-height: 50px;
 
+  --easy-table-rows-per-page-selector-width: 70px;
+  --easy-table-rows-per-page-selector-option-padding: 10px;
+
   --easy-table-scrollbar-track-color: #2d3a4f;
   --easy-table-scrollbar-color: #2d3a4f;
   --easy-table-scrollbar-thumb-color: #4c5d7a;;

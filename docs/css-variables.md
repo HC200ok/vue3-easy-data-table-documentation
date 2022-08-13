@@ -25,6 +25,8 @@ Click [here](https://hc200ok.github.io/vue3-easy-data-table-doc/features/style-c
 | --easy-table-footer-font-size | 12px; |  |
 | --easy-table-footer-padding | 0px 5px; |  |
 | --easy-table-footer-height | 36px; |  |
+| --easy-table-rows-per-page-selector-width | auto | Width of rows-per-page selector |
+| --easy-table-rows-per-page-selector-option-padding | 5px | Padding of rows-per-page selector option|
 | --easy-table-message-font-color | #212121; | Empty message related, when no items in table|
 | --easy-table-message-font-size | 12px; | Empty message related, when no items in table |
 | --easy-table-message-padding | 20px; | Empty message related, when no items in table |
