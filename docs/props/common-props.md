@@ -7,6 +7,7 @@ common props can be used both in client-side mode and server-side mode.
 | alternating | false | boolean | false | Set `true` to color alternating (even and odd) rows.|
 | body-row-class-name | false | (item: Item, index: number) => string `or` string | '' | Function that returns custom class names for a body row, or a string assigning class names for every body row |
 | body-item-class-name | false | (item: string, index: number) => string `or` string | '' | Function that returns custom class names for a body row item, or a string assigning class names for every body row item|
+| body-text-direction | false | 'left' \| 'center' \| 'right' | 'left' | Text direction of body item|
 | border-cell | false | boolean | false | Set `true` to show borderof  header item and body item |
 | buttons-pagination | false | boolean | false | By default, you can only use prev and next buttons to navigate. But if you set the value to `true`, Seven visible page buttons will be generated automatically to help you navigate much easier |
 | checkbox-column-width | false | number | null | Width of checkbox column. Click [here](https://hc200ok.github.io/vue3-easy-data-table-doc/features/fixed-column.html) for more information|
@@ -22,6 +23,7 @@ common props can be used both in client-side mode and server-side mode.
 | hide-rows-per-page | false | boolean | false |Set to `true` to hide rows per page|
 | header-class-name | false | string | '' | String assigning class names for table header |
 | header-item-class-name | false | (item: Header, index: number) => string `or` string | '' | Function that returns custom class names for a header item, or a string assigning class names for every header item |
+| header-text-direction | false | 'left' \| 'center' \| 'right' | 'left' | Text direction of header item|
 | index-column-width | false | number | 60 | Width of index column. Click [here](https://hc200ok.github.io/vue3-easy-data-table-doc/features/fixed-column.html) for more information|
 | items | true | Item[] <br>(Item:  Record<string, any>) | [] | Table body items |
 | loading | false | boolean | false | If true and no items are provided, then a loading animation and will be shown |

@@ -15,6 +15,9 @@
 | nextPage | function | Navigate to the next pag |
 | prevPage | function | Navigate to the previous page |
 | updatePage | function | Navigate to the specified page |
+| rowsPerPageOptions | variable | Options of rows per page  |
+| rowsPerPageActiveOption | variable | Active option of rows per page |
+| updateRowsPerPageActiveOption | function | Update active option of rows per page |
 
 You can access to these variables and functions through [template refs](https://vuejs.org/guide/essentials/template-refs.html).
 Then you can customize your own footer outside of the `vue3-easy-data-table` as the examples provided:
@@ -34,6 +37,22 @@ Then you can customize your own footer outside of the `vue3-easy-data-table` as 
   />
   
   <div class="customize-footer">
+    <div class="customize-rows-per-page">
+      <select
+        class="select-items"
+        @change="updateRowsPerPageSelect"
+      >
+        <option
+          v-for="item in rowsPerPageOptions"
+          :key="item"
+          :selected="item === rowsPerPageActiveOption"
+          :value="item"
+        >
+          {{ item }} rows per page
+        </option>
+      </select>
+    </div>
+
     <div class="customize-index">
       Now displaying: {{currentPageFirstIndex}} ~ {{currentPageLastIndex}} of {{clientItemsLength}}
     </div>
@@ -84,6 +103,14 @@ const prevPage = () => {
 };
 const updatePage = (paginationNumber: number) => {
   dataTable.value.updatePage(paginationNumber);
+};
+
+// rows per page related
+const rowsPerPageOptions = computed(() => dataTable.value?.rowsPerPageOptions);
+const rowsPerPageActiveOption = computed(() => dataTable.value?.rowsPerPageActiveOption);
+
+const updateRowsPerPageSelect = (e: Event) => {
+  dataTable.value.updateRowsPerPageActiveOption(Number((e.target as HTMLInputElement).value));
 };
 
 const headers: Header[] = [
@@ -162,6 +189,22 @@ npm install use-vue3-easy-data-table
   />
   
   <div class="customize-footer">
+    <div class="customize-rows-per-page">
+      <select
+        class="select-items"
+        @change="updateRowsPerPageSelect"
+      >
+        <option
+          v-for="item in rowsPerPageOptions"
+          :key="item"
+          :selected="item === rowsPerPageActiveOption"
+          :value="item"
+        >
+          {{ item }} rows per page
+        </option>
+      </select>
+    </div>
+
     <div class="customize-index">
       Now displaying: {{currentPageFirstIndex}} ~ {{currentPageLastIndex}} of {{clientItemsLength}}
     </div>
@@ -188,8 +231,8 @@ npm install use-vue3-easy-data-table
 import type { Header, Item } from "vue3-easy-data-table";
 import { computed, ref } from "vue";
 import { mockClientItems } from "../mock";
-import { usePagination } from "use-vue3-easy-data-table";
-import type { UsePaginationReturn } from "use-vue3-easy-data-table";
+import { usePagination, useRowsPerPage } from "use-vue3-easy-data-table";
+import type { UsePaginationReturn, UseRowsPerPageReturn } from "use-vue3-easy-data-table";
 
 const dataTable = ref();
 
@@ -205,6 +248,16 @@ const {
   prevPage,
   updatePage,
 }: UsePaginationReturn = usePagination(dataTable);
+
+const {
+  rowsPerPageOptions,
+  rowsPerPageActiveOption,
+  updateRowsPerPageActiveOption,
+}: UseRowsPerPageReturn = useRowsPerPage(dataTable);
+
+const updateRowsPerPageSelect = (e: Event) => {
+  updateRowsPerPageActiveOption(Number((e.target as HTMLInputElement).value));
+};
 
 const headers: Header[] = [
   { text: "Name", value: "name" },
@@ -241,3 +294,6 @@ const items: Item[] = mockClientItems(200);
 | nextPage | () => void | Navigate to the next pag |
 | prevPage | () => void | Navigate to the previous page |
 | updatePage | (paginationNumber: number) => void | Navigate to the specified page |
+| rowsPerPageOptions |  ComputedRef<number[] \| undefined> | Options of rows per page |
+| rowsPerPageActiveOption |  ComputedRef<number \| undefined> | Active option of rows per page |
+| updateRowsPerPageActiveOption |  (option: number) => void | Update active option of rows per page |

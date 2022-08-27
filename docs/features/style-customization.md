@@ -12,6 +12,8 @@ Custom table style by using [css variables](https://hc200ok.github.io/vue3-easy-
   <EasyDataTable
     theme-color="#1d90ff"
     table-class-name="customize-table"
+    header-text-direction="center"
+    body-text-direction="center"
   />
 </template>
 <style>

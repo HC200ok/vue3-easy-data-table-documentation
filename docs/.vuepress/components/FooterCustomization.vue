@@ -10,6 +10,21 @@
     </EasyDataTable>
 
     <div class="customize-footer">
+      <div class="customize-rows-per-page">
+        <select
+          class="select-items"
+          @change="updateRowsPerPageSelect"
+        >
+          <option
+            v-for="item in rowsPerPageOptions"
+            :key="item"
+            :selected="item === rowsPerPageActiveOption"
+            :value="item"
+          >
+            {{ item }} rows per page
+          </option>
+        </select>
+      </div>
       <div class="customize-index">
         Now displaying: {{currentPageFirstIndex}} ~ {{currentPageLastIndex}} of {{clientItemsLength}}
       </div>
@@ -37,8 +52,8 @@ import { computed, onMounted, ref, watch } from 'vue';
 import 'vue3-easy-data-table/dist/style.css';
 import EasyDataTable from 'vue3-easy-data-table';
 import { mockClientItems, mockServerItems } from "../mock";
-import { usePagination } from "use-vue3-easy-data-table";
-import type { UsePaginationReturn } from "use-vue3-easy-data-table";
+import { usePagination, useRowsPerPage } from "use-vue3-easy-data-table";
+import type { UsePaginationReturn, UseRowsPerPageReturn } from "use-vue3-easy-data-table";
 
 const items = ref<Item[]>(mockClientItems(200));
 const headers: Header[] = [
@@ -66,6 +81,16 @@ const {
   prevPage,
   updatePage,
 }: UsePaginationReturn = usePagination(dataTable);
+
+const {
+  rowsPerPageOptions,
+  rowsPerPageActiveOption,
+  updateRowsPerPageActiveOption,
+}: UseRowsPerPageReturn = useRowsPerPage(dataTable);
+
+const updateRowsPerPageSelect = (e: Event) => {
+  updateRowsPerPageActiveOption(Number((e.target as HTMLInputElement).value));
+};
 
 </script>
 

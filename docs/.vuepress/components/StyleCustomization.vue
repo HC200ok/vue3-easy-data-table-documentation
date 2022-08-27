@@ -11,6 +11,8 @@
       table-class-name="customize-table"
       :loading="loading"
       theme-color="#1d90ff"
+      header-text-direction="center"
+      body-text-direction="center"
     >
     </EasyDataTable>
   </div>
