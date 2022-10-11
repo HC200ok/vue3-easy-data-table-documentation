@@ -27,7 +27,7 @@
     "@vueform/slider": "^2.0.10",
     "use-vue3-easy-data-table": "^0.1.4",
     "vue-nav-tabs": "^0.5.7",
-    "vue3-easy-data-table": "1.4.15",
+    "vue3-easy-data-table": "1.5.3",
     "vuepress-plugin-vue-example": "^1.1.6"
   }
 }

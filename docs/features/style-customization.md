@@ -3,7 +3,7 @@
 > This is a new feature since version `1.3.11`
 
 
-Custom table style by using [css variables](https://hc200ok.github.io/vue3-easy-data-table-doc/features/css-variables.html) with `table-class-name` prop.
+Custom table style by using [css variables](https://hc200ok.github.io/vue3-easy-data-table-doc/css-variables.html) with `table-class-name` prop.
 
 ## Example
 

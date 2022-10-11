@@ -11,6 +11,7 @@ common props can be used both in client-side mode and server-side mode.
 | border-cell | false | boolean | false | Set `true` to show borderof  header item and body item |
 | buttons-pagination | false | boolean | false | By default, you can only use prev and next buttons to navigate. But if you set the value to `true`, Seven visible page buttons will be generated automatically to help you navigate much easier |
 | checkbox-column-width | false | number | null | Width of checkbox column. Click [here](https://hc200ok.github.io/vue3-easy-data-table-doc/features/fixed-column.html) for more information|
+| current-page | false | number | 1 | Initial current page |
 | empty-message | false | string | 'No Available Data' | Message to display when there is no data in table|
 | expand-column-width | false | number | 36 | Width of expand column. Click [here](https://hc200ok.github.io/vue3-easy-data-table-doc/features/expand-slot.html) for more information|
 | fixed-checkbox | false | boolean | false | Fixed checkbox column to the left side of table. Click [here](https://hc200ok.github.io/vue3-easy-data-table-doc/features/fixed-column.html) for more information |
@@ -29,10 +30,11 @@ common props can be used both in client-side mode and server-side mode.
 | loading | false | boolean | false | If true and no items are provided, then a loading animation and will be shown |
 | must-sort | false | boolean | false | If `true` then one can not disable sorting, it will always switch between ascending and descending |
 | no-hover | false | boolean | false |Set to `true` to forbidden change color when hovering table row|
-| table-height | false | number \| null | null | Height of table (table header and table body, without footer) |
-| theme-color | false | string | '#42b883' | Fill color of checkbox, background color of active option of rows selector, loading color and background color of active button of buttons pagination |
 | rows-items | false | number[] | [25, 50, 100] | A number array of rows-per-page, working as the options of `rows per page` selector |
 | rows-per-page | false | number | 25 | Rows of items to display in per page |
 | rows-per-page-message | false | string | 'rows per page:' | Rows per page message |
 | show-index | false | boolean | false | Set `true` to show index of item |
 | table-class-name | false | string | '' | String assigning class names for table |
+| table-height | false | number \| null | null | Height of table (table header and table body, without footer) |
+| table-min-height | false | number | 180 | Min height of table (table header and table body, without footer) |
+| theme-color | false | string | '#42b883' | Fill color of checkbox, background color of active option of rows selector, loading color and background color of active button of buttons pagination |

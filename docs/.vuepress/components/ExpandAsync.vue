@@ -2,6 +2,7 @@
   <EasyDataTable
     :headers="headers"
     :items="items"
+    :rows-per-page="4"
     @expand-row="loadIntroduction"
   >
     <template #expand="item">
@@ -29,6 +30,10 @@ const items = ref<Item[]>([
   { player: 'Lebron James', team: 'LAL' },
   { player: 'Kevin Durant', team: 'BKN' },
   { player: 'Giannis Antetokounmpo', team: 'MIL'},
+  { player: 'Stephen Curry JR', team: 'GSW' },
+  { player: 'Lebron James JR', team: 'LAL' },
+  { player: 'Kevin Durant JR', team: 'BKN' },
+  { player: 'Giannis Antetokounmpo JR', team: 'MIL'},
 ]);
 
 const loadIntroduction = async (index: number): Promise<void> => {

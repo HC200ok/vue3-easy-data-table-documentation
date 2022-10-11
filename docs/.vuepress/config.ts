@@ -52,6 +52,8 @@ module.exports = {
         ClassNameCustomization: path.resolve(__dirname, './components/ClassNameCustomization.vue'),
         ServerMustSort: path.resolve(__dirname, './components/ServerMustSort.vue'),
         UpdateSortEvent: path.resolve(__dirname, './components/UpdateSortEvent.vue'),
+        MultiSortClient: path.resolve(__dirname, './components/MultiSortClient.vue'),
+        MultiSortServer: path.resolve(__dirname, './components/MultiSortServer.vue'),
       }
     })
   ],
@@ -161,6 +163,10 @@ module.exports = {
           {
             text: 'Single field sorting',
             link: '/features/single-field-sorting',
+          },
+          {
+            text: 'Multiple fields sorting',
+            link: '/features/multiple-fields-sorting',
           },
           {
             text: 'Theme color',

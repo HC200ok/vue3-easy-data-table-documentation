@@ -33,7 +33,7 @@ Then you can customize your own footer outside of the `vue3-easy-data-table` as 
     :headers="headers"
     :items="items"
     :rows-per-page="10"
-    :show-footer="false"
+    :hide-footer
   />
   
   <div class="customize-footer">
@@ -134,7 +134,7 @@ const items: Item[] = mockClientItems(200);
 
 <FooterCustomization/>
 
-**Attention**: don't forget to set `show-footer` to `false` to to hide the native footer of `vue3-easy-data-table`
+**Attention**: don't forget to set `hide-footer` to to hide the native footer of `vue3-easy-data-table`
 
 #### In server-side mode
 
