@@ -30,6 +30,7 @@ common props can be used both in client-side mode and server-side mode.
 | loading | false | boolean | false | If true and no items are provided, then a loading animation and will be shown |
 | must-sort | false | boolean | false | If `true` then one can not disable sorting, it will always switch between ascending and descending |
 | no-hover | false | boolean | false |Set to `true` to forbidden change color when hovering table row|
+| rows-of-page-separator-message | false | string | 'of' | Rows of page separator message. e.g. 1-5 `of` 5 |
 | rows-items | false | number[] | [25, 50, 100] | A number array of rows-per-page, working as the options of `rows per page` selector |
 | rows-per-page | false | number | 25 | Rows of items to display in per page |
 | rows-per-page-message | false | string | 'rows per page:' | Rows per page message |

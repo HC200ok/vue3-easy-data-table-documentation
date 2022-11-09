@@ -1,12 +1,14 @@
 # Searching
-Use `search-field` and `search-value` props to search for information in a specific field. If you don't pass the `search-field` prop, the component will search in all fields.
+
+## Search in a specific field
+Use `search-field` and `search-value` props to search for result in a specific field. If you don't pass the `search-field` prop, it will search in all fields.
 
 > :warning: **Attention**: Searching feature is only available in client-side mode. In server-side mode, you need to request searched data from server when you navigate to a new page.
 > Click [here](https://hc200ok.github.io/vue3-easy-data-table-doc/features/server-side-paginate-and-sort.html) to check more information about server-side mode
 
-## Example
+### Example
 
-By default, vue3-easy-data-table doesn't provide a search input, but you can provide your own search input element like this:
+By default, `vue3-easy-data-table` doesn't provide a search input, but you can provide your own search input element like this:
 
 ```vue
 <template>
@@ -58,4 +60,34 @@ const items: Item[] = [
 [![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/searching-8egujm?file=/src/App.vue)
 
 <Searching/>
+
+## Search across multiple fields
+
+Set a fields array for the `search-field` prop.
+
+### Example:
+
+
+```vue
+<template>
+  <span>search value: </span>
+  <input type="text" v-model="searchValue">
+
+  <EasyDataTable
+    :headers="headers"
+    :items="items"
+    :search-field="searchField"
+    :search-value="searchValue"
+  />
+</template>
+
+<script lang="ts" setup>
+const searchField = ["number", "weight"];
+const searchValue = ref(0);
+
+// omit ...
+</script>
+```
+<SearchAcrossMultipleColumn/>
+
 

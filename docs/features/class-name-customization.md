@@ -11,6 +11,7 @@ Customize class name by using props:
 | header-class-name | false | string | '' | String assigning class names for table header |
 | header-item-class-name | false | (item: Header, index: number) => string `or` string | '' | Function that returns custom class names for a header item, or a string assigning class names for every header item |
 | body-row-class-name | false | (item: Item, index: number) => string `or` string | '' | Function that returns custom class names for a body row, or a string assigning class names for every body row |
+| body-expand-row-class-name | false | (item: Item, index: number) => string `or` string | '' | Function that returns custom class names for a body expanding row, or a string assigning class names for every body expanding row |
 | body-item-class-name | false | (item: string, index: number) => string `or` string | '' | Function that returns custom class names for a body row item, or a string assigning class names for every body row item|
 
 ```vue
@@ -21,9 +22,13 @@ Customize class name by using props:
       :items="items"
       :header-item-class-name="headerItemClassNameFunction"
       :body-row-class-name="bodyRowClassNameFunction"
+      :body-expand-row-class-name="bodyExpandRowClassNameFunction"
       :body-item-class-name="bodyItemClassNameFunction"
       no-hover
     >
+      <template #expand="item">
+        {{ item.name }} in {{ item.class }} got {{ item.score }}
+      </template>
     </EasyDataTable>
   </div>
 </template>
@@ -34,6 +39,10 @@ import { Header, Item, BodyRowClassNameFunction, HeaderItemClassNameFunction, Bo
 const bodyRowClassNameFunction: BodyRowClassNameFunction = (item: Item, index: number): string => {
   if (item.score < 60) return 'fail-row';
   return 'pass-row';
+};
+
+const bodyExpandRowClassNameFunction: BodyRowClassNameFunction = (item: Item, index: number): string => {
+  return 'expand-row';
 };
 
 const bodyItemClassNameFunction: BodyItemClassNameFunction = (column: string, index: number): string => {
@@ -70,6 +79,10 @@ const items: Item[] = [
 }
 .pass-row  {
   --easy-table-body-row-background-color: #67c23a;
+  --easy-table-body-row-font-color: #fff;
+}
+.expand-row {
+  --easy-table-body-row-background-color: grey;
   --easy-table-body-row-font-color: #fff;
 }
 </style>

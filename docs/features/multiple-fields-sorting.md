@@ -3,7 +3,7 @@
 ## Multiple fields sorting in client mode
 Use `sort-by` and `sort-type` props to determine the initial sorting fields and sorting type.
 
-Set `multi-sort` property `true` to make all fileds sortable.
+Set prop `multi-sort: true` and header property `sortable: true` to make specific fields sortable.
 
 ### Example:
 
@@ -51,9 +51,9 @@ const items: Item[] = [
 
 ## Multiple fields sorting in server-side mode
 
-Set `sortBy` array and `sortType` array of `serverOptions` to determine the initial sorting fields and sorting type.
+Set `sortBy` array and `sortType` array in `serverOptions` to determine the initial sorting fields and sorting type.
 
-Set `multi-sort` property `true` to make all fileds sortable.
+Set prop `multi-sort: true` and header property `sortable: true` to make specific fields sortable.
 
 ### Example:
 

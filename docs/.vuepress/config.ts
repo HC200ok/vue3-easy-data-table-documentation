@@ -54,6 +54,7 @@ module.exports = {
         UpdateSortEvent: path.resolve(__dirname, './components/UpdateSortEvent.vue'),
         MultiSortClient: path.resolve(__dirname, './components/MultiSortClient.vue'),
         MultiSortServer: path.resolve(__dirname, './components/MultiSortServer.vue'),
+        SearchAcrossMultipleColumn: path.resolve(__dirname, './components/SearchAcrossMultipleColumn.vue'),
       }
     })
   ],

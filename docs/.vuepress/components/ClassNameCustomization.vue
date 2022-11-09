@@ -5,9 +5,13 @@
       :items="items"
       :header-item-class-name="headerItemClassNameFunction"
       :body-row-class-name="bodyRowClassNameFunction"
+      :body-expand-row-class-name="bodyExpandRowClassNameFunction"
       :body-item-class-name="bodyItemClassNameFunction"
       no-hover
     >
+    <template #expand="item">
+      {{ item.name }} in {{ item.class }} got {{ item.score }}
+    </template>
     </EasyDataTable>
   </div>
 </template>
@@ -21,6 +25,10 @@ import { mockClientItems } from "../mock";
 const bodyRowClassNameFunction: BodyRowClassNameFunction = (item: Item, index: number): string => {
   if (item.score < 60) return 'fail-row';
   return 'pass-row';
+};
+
+const bodyExpandRowClassNameFunction: BodyRowClassNameFunction = (item: Item, index: number): string => {
+  return 'expand-row';
 };
 
 const bodyItemClassNameFunction: BodyItemClassNameFunction = (column: string, index: number): string => {
@@ -57,6 +65,10 @@ const items: Item[] = [
 }
 .pass-row  {
   --easy-table-body-row-background-color: #67c23a;
+  --easy-table-body-row-font-color: #fff;
+}
+.expand-row {
+  --easy-table-body-row-background-color: grey;
   --easy-table-body-row-font-color: #fff;
 }
 </style>
