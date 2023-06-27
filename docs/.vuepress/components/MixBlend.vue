@@ -1,7 +1,7 @@
 <template>
   <div class="mix-blend-container">
     <img
-      src="https://acegif.com/wp-content/gifs/fire-17.gif"
+      src="https://i.ibb.co/fMBvhbQ/tumblr-87a40d4b30b4c8e8ebf12a82eb71f8f0-44246dc6-500.webp"
       alt=""
     />
     <div class="text">

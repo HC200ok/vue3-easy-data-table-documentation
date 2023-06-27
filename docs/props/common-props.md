@@ -5,8 +5,9 @@ common props can be used both in client-side mode and server-side mode.
 | -------- | ----------- | ---- | -------- | ------- |
 | v-model: itemsSelected | false | Item[]<br>(Record<string, any>[]) | null | Items selected|
 | alternating | false | boolean | false | Set `true` to color alternating (even and odd) rows.|
-| body-row-class-name | false | (item: Item, index: number) => string `or` string | '' | Function that returns custom class names for a body row, or a string assigning class names for every body row |
-| body-item-class-name | false | (item: string, index: number) => string `or` string | '' | Function that returns custom class names for a body row item, or a string assigning class names for every body row item|
+| body-expand-row-class-name | false | (item: Item, rowNumber: number) => string `or` string | '' | Function that returns custom class names for a body expanding row, or a string assigning class names for every body expanding row |
+| body-row-class-name | false | (item: Item, rowNumber: number) => string `or` string | '' | Function that returns custom class names for a body row, or a string assigning class names for every body row |
+| body-item-class-name | false | (column: string, index: rowNumber) => string `or` string | '' | Function that returns custom class names for a body row item, the second parameter means the row number in current page|
 | body-text-direction | false | 'left' \| 'center' \| 'right' | 'left' | Text direction of body item|
 | border-cell | false | boolean | false | Set `true` to show borderof  header item and body item |
 | buttons-pagination | false | boolean | false | By default, you can only use prev and next buttons to navigate. But if you set the value to `true`, Seven visible page buttons will be generated automatically to help you navigate much easier |
@@ -23,7 +24,7 @@ common props can be used both in client-side mode and server-side mode.
 | hide-footer | false | boolean | false | Set `true` to hide native footer of `vue3-easy-data-table`.|
 | hide-rows-per-page | false | boolean | false |Set to `true` to hide rows per page|
 | header-class-name | false | string | '' | String assigning class names for table header |
-| header-item-class-name | false | (item: Header, index: number) => string `or` string | '' | Function that returns custom class names for a header item, or a string assigning class names for every header item |
+| header-item-class-name | false | (item: Header, columnNumber: number) => string `or` string | '' | Function that returns custom class names for a header item, or a string assigning class names for every header item |
 | header-text-direction | false | 'left' \| 'center' \| 'right' | 'left' | Text direction of header item|
 | index-column-width | false | number | 60 | Width of index column. Click [here](https://hc200ok.github.io/vue3-easy-data-table-doc/features/fixed-column.html) for more information|
 | items | true | Item[] <br>(Item:  Record<string, any>) | [] | Table body items |
@@ -35,6 +36,7 @@ common props can be used both in client-side mode and server-side mode.
 | rows-per-page | false | number | 25 | Rows of items to display in per page |
 | rows-per-page-message | false | string | 'rows per page:' | Rows per page message |
 | show-index | false | boolean | false | Set `true` to show index of item |
+| show-index-symbol | false | string | '#' | Text of index column header when `show-index` is `true` |
 | table-class-name | false | string | '' | String assigning class names for table |
 | table-height | false | number \| null | null | Height of table (table header and table body, without footer) |
 | table-min-height | false | number | 180 | Min height of table (table header and table body, without footer) |

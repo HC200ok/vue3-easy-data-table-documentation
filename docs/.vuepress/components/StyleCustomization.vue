@@ -116,6 +116,7 @@ watch(
 
   --easy-table-rows-per-page-selector-width: 70px;
   --easy-table-rows-per-page-selector-option-padding: 10px;
+  --easy-table-rows-per-page-z-index: 1;
 
   --easy-table-scrollbar-track-color: #2d3a4f;
   --easy-table-scrollbar-color: #2d3a4f;

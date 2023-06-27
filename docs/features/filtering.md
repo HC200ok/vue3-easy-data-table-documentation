@@ -6,6 +6,7 @@ Use `filter-options` prop to filter items in `vue3-easy-data-table`.
 | Value | Description |
 | ----- | ----------- |
 | between | Between |
+| in | In |
 | = | Equals |
 | != | Does not equal |
 | > | Greater than |
@@ -32,6 +33,10 @@ type FilterOption = {
   field: string,
   comparison: (value: any, criteria: string) => boolean,
   criteria: string,
+} | {
+  field: string
+  comparison: 'in'
+  criteria: number[] | string[]
 }
 ```
 

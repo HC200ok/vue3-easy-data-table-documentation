@@ -9,10 +9,10 @@ Customize class name by using props:
 | -------- | ----------- | ---- | -------- | ------- |
 | table-class-name | false | string | '' | String assigning class names for table |
 | header-class-name | false | string | '' | String assigning class names for table header |
-| header-item-class-name | false | (item: Header, index: number) => string `or` string | '' | Function that returns custom class names for a header item, or a string assigning class names for every header item |
-| body-row-class-name | false | (item: Item, index: number) => string `or` string | '' | Function that returns custom class names for a body row, or a string assigning class names for every body row |
-| body-expand-row-class-name | false | (item: Item, index: number) => string `or` string | '' | Function that returns custom class names for a body expanding row, or a string assigning class names for every body expanding row |
-| body-item-class-name | false | (item: string, index: number) => string `or` string | '' | Function that returns custom class names for a body row item, or a string assigning class names for every body row item|
+| header-item-class-name | false | (header: Header, columnNumber: number) => string `or` string | '' | Function that returns custom class names for a header item, or a string assigning class names for every header item |
+| body-row-class-name | false | (item: Item, rowNumber: number) => string `or` string | '' | Function that returns custom class names for a body row, or a string assigning class names for every body row |
+| body-expand-row-class-name | false | (item: Item, rowNumber: number) => string `or` string | '' | Function that returns custom class names for a body expanding row, or a string assigning class names for every body expanding row |
+| body-item-class-name | false | (column: string, rowNumber: number) => string `or` string | '' | Function that returns custom class names for a body row item, the second parameter means the row number in current page|
 
 ```vue
 <template>
@@ -36,21 +36,21 @@ Customize class name by using props:
 <script lang="ts" setup>
 import { Header, Item, BodyRowClassNameFunction, HeaderItemClassNameFunction, BodyItemClassNameFunction} from "vue3-easy-data-table";
 
-const bodyRowClassNameFunction: BodyRowClassNameFunction = (item: Item, index: number): string => {
+const bodyRowClassNameFunction: BodyRowClassNameFunction = (item: Item, rowNumber: number): string => {
   if (item.score < 60) return 'fail-row';
   return 'pass-row';
 };
 
-const bodyExpandRowClassNameFunction: BodyRowClassNameFunction = (item: Item, index: number): string => {
+const bodyExpandRowClassNameFunction: BodyRowClassNameFunction = (item: Item, rowNumber: number): string => {
   return 'expand-row';
 };
 
-const bodyItemClassNameFunction: BodyItemClassNameFunction = (column: string, index: number): string => {
+const bodyItemClassNameFunction: BodyItemClassNameFunction = (column: string, rowNumber: number): string => {
   if (column === 'score') return 'score-column';
   return '';
 };
 
-const headerItemClassNameFunction: HeaderItemClassNameFunction = (header: Header, index: number): string => {
+const headerItemClassNameFunction: HeaderItemClassNameFunction = (header: Header, columnNumber: number): string => {
   if (header.value === 'score') return 'score-column';
   return '';
 };

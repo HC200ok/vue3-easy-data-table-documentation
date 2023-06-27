@@ -46,6 +46,8 @@ module.exports = {
         FixedIndex: path.resolve(__dirname, './components/FixedIndex.vue'),
         FixedItemSlot: path.resolve(__dirname, './components/FixedItemSlot.vue'),
         HeaderSlot: path.resolve(__dirname, './components/HeaderSlot.vue'),
+        HeaderSlotCustomize: path.resolve(__dirname, './components/HeaderSlotCustomize.vue'),
+        HeaderSlotGeneric: path.resolve(__dirname, './components/HeaderSlotGeneric.vue'),
         ExpandSlot: path.resolve(__dirname, './components/ExpandSlot.vue'),
         ExpandSlotFixed: path.resolve(__dirname, './components/ExpandSlotFixed.vue'),
         ExpandAsync: path.resolve(__dirname, './components/ExpandAsync.vue'),
@@ -55,6 +57,7 @@ module.exports = {
         MultiSortClient: path.resolve(__dirname, './components/MultiSortClient.vue'),
         MultiSortServer: path.resolve(__dirname, './components/MultiSortServer.vue'),
         SearchAcrossMultipleColumn: path.resolve(__dirname, './components/SearchAcrossMultipleColumn.vue'),
+        EmptyMessageSlot: path.resolve(__dirname, './components/EmptyMessageSlot.vue'),
       }
     })
   ],
@@ -138,7 +141,7 @@ module.exports = {
             link: '/features/item-slot',
           },
           {
-            text: 'Loading slot',
+            text: 'Loading slot, empty slot',
             link: '/features/loading-slot',
           },
           {

@@ -1,6 +1,7 @@
 <template>
   <div>
     <EasyDataTable
+      v-model:items-selected="itemsSelected"
       :headers="headers"
       :items="items"
       :header-item-class-name="headerItemClassNameFunction"
@@ -21,6 +22,9 @@ import 'vue3-easy-data-table/dist/style.css';
 import EasyDataTable from 'vue3-easy-data-table';
 import { Header, Item, BodyRowClassNameFunction, HeaderItemClassNameFunction, BodyItemClassNameFunction} from "vue3-easy-data-table";
 import { mockClientItems } from "../mock";
+import { ref } from "vue";
+
+const itemsSelected: Item[] = ref([]);
 
 const bodyRowClassNameFunction: BodyRowClassNameFunction = (item: Item, index: number): string => {
   if (item.score < 60) return 'fail-row';

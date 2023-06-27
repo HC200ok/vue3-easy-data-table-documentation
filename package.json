@@ -21,13 +21,13 @@
   "devDependencies": {
     "@vuepress/plugin-register-components": "^2.0.0-beta.46",
     "@vuepress/plugin-search": "^2.0.0-beta.46",
-    "vuepress": "^2.0.0-beta.46"
+    "vuepress": "^2.0.0-beta.46",
+    "vue3-easy-data-table": "1.5.39"
   },
   "dependencies": {
     "@vueform/slider": "^2.0.10",
     "use-vue3-easy-data-table": "^0.1.4",
     "vue-nav-tabs": "^0.5.7",
-    "vue3-easy-data-table": "1.5.12",
     "vuepress-plugin-vue-example": "^1.1.6"
   }
 }
